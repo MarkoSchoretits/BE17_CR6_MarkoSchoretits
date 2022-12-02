@@ -3,24 +3,26 @@
 {% block title %}Event index{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
 <div class="container">
-    <div class="row row.cols-3">
-        {% for event in events %}
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">{{ event.name }}</h5>
-            <p class="card-text">{{ event.description }}</p>
-            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">details</a>
-            <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-primary">update</a>
+    <h1 class="">Chose from all our bigEVENTs</h1>
+    <a href="{{ path('app_event_new') }}" class="btn mb-3 btn-success">Create new</a>
+        <div class="row row.cols-3">
+            {% for event in events %}
+            <div class="card pt-3 mb-3 bg-light" style="width: 18rem;">
+                <img src="{{ absolute_url(asset('../pictures/advent.jpeg')) }}" class="card-img-top" alt="EVENTpic">
+                <div class="card-body">
+                    <p class="card-text">{{ event.date|date("D, Y-m-d h:i") }}</p>
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <p class="card-text">{{ event.description }}</p>
+                <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">details</a>
+                <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-warning">update</a>
+                </div>
+
+
             </div>
-
-
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
 {# 
     <table class="table">
         <thead>
@@ -74,6 +76,5 @@
         </tbody>
     </table>
  
-    <a href="{{ path('app_event_new') }}">Create new</a>
 #}
     {% endblock %}

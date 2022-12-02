@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark mb-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">bigEVENTS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +32,8 @@ EVENTfilter
 EVENTadmin
 </a>
 <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#">EVENTindex</a></li>
-<li><a class="dropdown-item" href="#">createEVENT</a></li>
-<li><a class="dropdown-item" href="#">updateEVENT</a></li>
-<li><a class="dropdown-item" href="#">deleteEVENT</a></li>
+<li><a class="dropdown-item" href="{{ path('app_event_index') }}">EVENTindex</a></li>
+<li><a class="dropdown-item" href="{{ path('app_event_new') }}">createEVENT</a></li>
 </ul>
 </li>
 </ul>
