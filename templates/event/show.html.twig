@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    <h1>Event</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ event.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ event.name }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ event.description }}</td>
+            </tr>
+            <tr>
+                <th>Picture</th>
+                <td>{{ event.picture }}</td>
+            </tr>
+            <tr>
+                <th>Capacity</th>
+                <td>{{ event.capacity }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ event.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ event.phone }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ event.location }}</td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td>{{ event.street }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ event.number }}</td>
+            </tr>
+            <tr>
+                <th>Zip</th>
+                <td>{{ event.zip }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ event.city }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ event.url }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ event.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_event_index') }}">back to list</a>
+
+    <a href="{{ path('app_event_edit', {'id': event.id}) }}">edit</a>
+
+    {{ include('event/_delete_form.html.twig') }}
+{% endblock %}
