@@ -21,11 +21,11 @@ class EventController extends AbstractController
         ]);
     }
 
-    #[Route('/filter', name: 'app_event_filter', methods: ['GET'])]
-    public function filter(EventRepository $eventRepository): Response
+    #[Route('/filter/{type}', name: 'app_event_filter', methods: ['GET'])]
+    public function filter(EventRepository $eventRepository, $type): Response
     {
         return $this->render('event/filter.html.twig', [
-            'events' => $eventRepository->findBy(['type' => 'adventure']),
+            'events' => $eventRepository->findBy(['type' => $type]),
         ]);
     }
 
