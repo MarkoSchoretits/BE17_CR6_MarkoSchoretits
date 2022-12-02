@@ -4,7 +4,24 @@
 
 {% block body %}
     <h1>Event index</h1>
+<div class="container">
+    <div class="row row.cols-3">
+        {% for event in events %}
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ event.name }}</h5>
+            <p class="card-text">{{ event.description }}</p>
+            <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">details</a>
+            <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-primary">update</a>
+            </div>
 
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{# 
     <table class="table">
         <thead>
             <tr>
@@ -56,6 +73,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+ 
     <a href="{{ path('app_event_new') }}">Create new</a>
-{% endblock %}
+#}
+    {% endblock %}
