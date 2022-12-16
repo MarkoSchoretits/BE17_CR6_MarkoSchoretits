@@ -126,3 +126,13 @@ https://github.com/MarkoSchoretits/BE17_CR6_MarkoSchoretits
 .sql located in sub-folder ./DBs
 
 launch project @ localhost:8000/event/
+
+Feedback
+Grade	100.00 / 100.00
+Graded on	Friday, 9 December 2022, 11:16 AM
+Graded by	Picture of Manuel WidnerManuel Widner
+Feedback comments	
+Hey Markus,
+very well done this code review!
+everything works and you even managed to do the filter.
+great job! keep up the good work.
